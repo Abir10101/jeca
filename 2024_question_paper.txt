@@ -1,0 +1,13 @@
+1. explain polymorphism?
+ans:- polymorphism is feature of oops that allows developers to create multiple forms of a function. There are two types of polymorphism.
+	a) compiletime polymorphism: function overloading
+	b) runtime polymorphism: function overriding
+
+2. explain decision tree?
+ans:- decision trees are machine learning models that comes under supervised learning classification. It forms a hierarchical, tree like structure with root node, branches, internal nodes and leaf nodes. A decision tree can grow very complex by noise or anomaly training data which is called as overfitting. Overfitted decision trees performs excellently good on training data but performs poorly on test data. Pruning is a technique used to combat overfitted decision trees. There are two types of pruning. a) Pre-pruning: Stopping at the time of noise data. b) Post-pruning: Building the full tree first then delete noise data branches
+
+3. Explain supervised and unsupervised learning?
+ans:- Supervised learning is a machine learning approach where the algorithm learns from labeled training data to predict outcomes for unseen data. The "supervision" comes from the fact that the model is trained on input-output pairs where the correct answers are provided. Eg: Classification: Predicting a categorical label (e.g., spam detection, image recognition). Unsupervised learning involves training algorithms on data without labeled responses. The algorithm tries to learn patterns, relationships, or structure in the data on its own. Eg: Anomaly Detection: Identifying outliers or unusual data points
+
+4. Time-to-live (TTL) field in IP header?
+ans:- TTl field in IP header is used to prevent packets from circulating around the network indefinitely. It's an 8-bit field that limits a packet's lifetime by setting a maximum hop count. Each router that processes the packet decrements this value by at least 1, and when the TTL reaches zero, the packet is discarded, and an ICMP "Time Exceeded" message is typically sent back to the source.
