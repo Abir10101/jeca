@@ -28,3 +28,11 @@ ans: Cache is between cpu and ram and storage used is sram (Static Ram), Page is
 
 7. How a data bus in cpu works with ram?
 - Data bus reads data from ram chip in chip width (words) so for 32 bit data bus and chip width 8 bits then bus will require minimum of 32/8=4 chips to read data. Similarly, for chip width of 16 bits will require minimum of 32/16=2 chips for the data bus to work. 
+
+
+8. Explain transitive dependency?
+- Transitive dependency occurs in a relational database when one non-key attribute is dependent on another non-key attribute, which in turn determined by a third attribute. This creates a chain of dependencies like the transitive property in maths.
+- To eliminate transitive dependencies, relation should be divided into smaller relations, each with one of the determinants as its primary key, ensuring the relation is in third normal form.
+- A→B and B→C; therefore A→C
+    Item_numb → distrib_numb
+    Distrib_numb → warehouse_phone_number
