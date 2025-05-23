@@ -33,6 +33,15 @@ ans: Cache is between cpu and ram and storage used is sram (Static Ram), Page is
 8. Explain transitive dependency?
 - Transitive dependency occurs in a relational database when one non-key attribute is dependent on another non-key attribute, which in turn determined by a third attribute. This creates a chain of dependencies like the transitive property in maths.
 - To eliminate transitive dependencies, relation should be divided into smaller relations, each with one of the determinants as its primary key, ensuring the relation is in third normal form.
-- A→B and B→C; therefore A→C
-    Item_numb → distrib_numb
-    Distrib_numb → warehouse_phone_number
+- A -> B and B -> C; therefore A -> C
+    Item_numb -> distrib_numb
+    Distrib_numb -> warehouse_phone_number
+
+
+9. Explain is Super Key, Primary Key, Alternate Key, Candidate Key, Compound Key, Composite Key.
+- Super Key: Group of attributes that can identify a row in a table. Basically it is a group of all the keys in a table.
+- Candidate Key: A group of attributes where each attribute can uniquely identify a row in a table. It is a minimal superkey.
+- Primary Key: An attribute from the candidate key that is chosen to be primary key. Chosen on the basis of: It cannot be null.
+- Alternate Key: Single or group of attributes from the Candidate Key which are not chosen as primary key is an alternate key.
+- Compound Key: Set of foreign key attributes that together can identify each record in a table.
+- Composite Key: Set of attributes that together can identify each record in a table but does not contain foreign keys.
