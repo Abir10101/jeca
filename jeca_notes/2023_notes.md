@@ -110,3 +110,29 @@ void printPostOrder(Node* node)
     - First, convert LR into LL by rotating nodes 8 and 9, making 9 the parent of 8.
     - Second, perform a single clockwise rotation at node 9.
   - After rotations, the tree is balanced with 9 as the root, and 8 and 10 as its left and right children.
+
+## Sorting
+
+### Bubble Sort
+
+- **Compare Adjacent Elements:** Repeatedly step through the list, comparing each pair of adjacent elements.
+- **Swap if Needed:** If a pair is in the wrong order (i.e., the first is greater than the second), swap them.
+- **Repeat Passes:** Continue making passes through the list until no swaps are needed, which means the list is sorted.
+- **Time Complexity:** Worst-case and average time complexity is O(n²), it's inefficient for large datasets.
+- [Link](https://www.geeksforgeeks.org/bubble-sort-algorithm/)
+
+### Insertion Sort
+
+- **Build Sorted Sublist:** Start from the second element and insert each element into its correct position in the sorted part of the list.
+- **Shift Elements:** Compare the current element with those before it and shift larger elements one position to the right.
+- **Insert Element:** Place the current element in the correct position.
+- **Time Complexity:** Worst-case time complexity is O(n²), but it's efficient for small or nearly sorted datasets.
+- [Link](https://www.geeksforgeeks.org/insertion-sort-algorithm/)
+
+### Selection Sort
+
+- **Find Minimum:** In each pass, find the smallest (or largest) element from the unsorted portion.
+- **Swap:** Swap it with the first unsorted element.
+- **Shrink Unsorted Part:** Move the boundary between sorted and unsorted parts one step forward.
+- **Time Complexity:** Always O(n²) regardless of input, and it makes the minimum number of swaps.
+- [Link](https://www.geeksforgeeks.org/selection-sort-algorithm-2/)
