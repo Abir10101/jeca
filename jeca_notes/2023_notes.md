@@ -23,6 +23,58 @@
 - BSTs facilitate easier searching, insertion, and deletion compared to Binary Tree.
 - **Worst-case scenario:** If data is skewed (right or left), the tree behaves like a linked list, leading to O(n) complexity.
 
+### Binary Search Tree Traversals
+
+- Inorder Traversal: Traverse left subtree then visit the root and then traverse the right subtree.
+```c++
+void printInorder(Node* node) {
+    if (node == NULL) return;
+
+    // Traverse left subtree
+    printInorder(node->left);
+
+    // Visit node
+    cout << node->data << " ";
+
+    // Traverse right subtree
+    printInorder(node->right);
+}
+```
+
+- Preorder Traversal: Visit the root then traverse left subtree and then traverse the right subtree.
+```c++
+void printPreOrder(Node* node)
+{
+    if (node == NULL) return;
+
+    // Visit Node
+    cout << node->data << " ";
+
+    // Traverse left subtree
+    printPreOrder(node->left);
+
+    // Traverse right subtree
+    printPreOrder(node->right);
+}
+```
+
+- Postorder Traversal: Traverse left subtree then traverse the right subtree and then visit the root.
+```c++
+void printPostOrder(Node* node)
+{
+    if (node == NULL) return;
+
+    // Traverse left subtree
+    printPostOrder(node->left);
+
+    // Traverse right subtree
+    printPostOrder(node->right);
+
+    // Visit node
+    cout << node->data << " ";
+}
+```
+
 ## AVL Tree
 - AVL trees are balanced BSTs with restriction of tree's height to log n, where n = number of nodes.
 - These trees is used for efficient search operations with guarantee of O(log n) time complexity.
