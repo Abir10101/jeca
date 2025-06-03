@@ -1,5 +1,3 @@
-```markdown```
-
 # 2023 Answer sheet
 
 ## Semaphore
