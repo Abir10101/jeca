@@ -136,3 +136,10 @@ void printPostOrder(Node* node)
 - **Shrink Unsorted Part:** Move the boundary between sorted and unsorted parts one step forward.
 - **Time Complexity:** Always O(n²) regardless of input, and it makes the minimum number of swaps.
 - [Link](https://www.geeksforgeeks.org/selection-sort-algorithm-2/)
+
+### Quick Sort
+
+- [Link](https://www.youtube.com/watch?v=tWCaFVJMUi8&t=9s)
+- Quick Sort doesn’t need extra memory for another array (except the call stack), making it space-efficient.
+- Time Complexity: Average: O(n log n), worst Case: O(n²) (happens when the pivot is always the smallest or largest element), best Case: O(n log n), with balanced partitions.
+
