@@ -139,7 +139,97 @@ void printPostOrder(Node* node)
 
 ### Quick Sort
 
-- [Link](https://www.youtube.com/watch?v=tWCaFVJMUi8&t=9s)
-- Quick Sort doesn’t need extra memory for another array (except the call stack), making it space-efficient.
-- Time Complexity: Average: O(n log n), worst Case: O(n²) (happens when the pivot is always the smallest or largest element), best Case: O(n log n), with balanced partitions.
+```
+function QUICK_SORT(array, low, high)
+    if low < high then
+        pivot_index = PARTITION(array, low, high)
+        QUICK_SORT(array, low, pivot_index - 1)   // Sort left part
+        QUICK_SORT(array, pivot_index + 1, high)  // Sort right part
+    end if
+end function
 
+function PARTITION(array, low, high)
+    pivot = array[low]                 // Choose pivot (can be low, high, or random)
+    i = low + 1
+    j = high
+
+    while true do
+        // Move i to the right until finding element >= pivot
+        while i <= high and array[i] <= pivot do
+            i = i + 1
+        end while
+
+        // Move j to the left until finding element <= pivot
+        while j >= low and array[j] > pivot do
+            j = j - 1
+        end while
+
+        // If pointers cross, break the loop
+        if i > j then
+            break
+        end if
+
+        // Swap elements at i and j
+        SWAP(array[i], array[j])
+    end while
+
+    // Swap pivot with element at j to place pivot in correct position
+    SWAP(array[low], array[j])
+
+    return j  // New pivot index
+end function
+```
+
+- Divide and conquer approach.
+- [Link](https://www.youtube.com/watch?v=tWCaFVJMUi8&t=9s)
+- Space Complexity: O(1)
+- Time Complexity: Average: O(n log n), worst Case: O(n^2) (happens when the pivot is always the smallest or largest element), best Case: O(n log n), with balanced partitions.
+
+### Merge Sort
+
+```
+MERGE_SORT(A, p, r)
+    if p < r then
+        q = floor((p + r) / 2)          // Find middle index
+        MERGE_SORT(A, p, q)             // Sort left half
+        MERGE_SORT(A, q + 1, r)         // Sort right half
+        MERGE(A, p, q, r)               // Merge the two sorted halves
+    end if
+end function
+
+MERGE(A, p, q, r)
+    n1 = q - p + 1                      // Length of left subarray
+    n2 = r - q                          // Length of right subarray
+
+    create array L[1 .. n1 + 1]
+    create array R[1 .. n2 + 1]
+
+    for i = 1 to n1
+        L[i] = A[p + i - 1]             // Copy left half into L
+    end for
+
+    for j = 1 to n2
+        R[j] = A[q + j]                 // Copy right half into R
+    end for
+
+    L[n1 + 1] = ∞                       // Sentinel value
+    R[n2 + 1] = ∞                       // Sentinel value
+
+    i = 1
+    j = 1
+
+    for k = p to r
+        if L[i] ≤ R[j] then
+            A[k] = L[i]
+            i = i + 1
+        else
+            A[k] = R[j]
+            j = j + 1
+        end if
+    end for
+end function
+```
+
+- Divide and conquer approach.
+- Space Complexity: O(n) extra space is used for merging.
+- Time Complexity: Average: O(n log n), worst Case: O(n log n), best Case: O(n log n), merging takes linear time and there are log n levels of division.
