@@ -1,0 +1,6 @@
+CompileFlags:
+  Add: [
+    "-I/usr/lib/gcc/x86_64-redhat-linux/15/include",
+    "-I/usr/local/include",
+    "-I/usr/include"
+  ]
