@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 
-void swap(int *i, int *j) {
-  int t = *i;
-  *i = *j;
-  *j = t;
+void swap(int *a, int *b) {
+  int t = *a;
+  *a = *b;
+  *b = t;
 }
 
 int partition(int *arr, int low, int high) {
@@ -50,6 +50,6 @@ int main() {
   int arr[4] = {10, 12, 5, 7};
   int n = sizeof(arr)/sizeof(arr[0]);
 
-  quickSort(arr, 0, n);
+  quickSort(arr, 0, n-1);
   printArr(arr, n);
 }
