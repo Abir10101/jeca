@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 #include <vector>
 #include <algorithm>
 using namespace std;
@@ -7,6 +8,16 @@ class Graph {
 private:
     int V; // Number of vertices
     vector<vector<int>> adj; // 2D adjacency list
+
+    void dfs(int node, vector<int> &vis, vector<int> &result) {
+        vis[node] = 1;
+        result.push_back(node);
+        for(auto it : adj[node]) {
+            if(!vis[it]) {
+                dfs(it, vis, result);
+            }
+        }
+    }
 
 public:
     // Create: Initialize graph with vertices
@@ -54,24 +65,71 @@ public:
         }
     }
 
-    int main() {
-        Graph g(4); // Create graph with 4 vertices
-    
-        // Add edges
-        g.addEdge(0, 1);
-        g.addEdge(0, 2);
-        g.addEdge(1, 3);
-    
-        // Check edge
-        cout << "Edge 1-3 exists? " << g.hasEdge(1, 3) << endl; // 1 (true)
-    
-        // Update edge: change 0-2 to 0-3
-        g.updateEdge(0, 2, 3);
-    
-        // Remove edge
-        g.removeEdge(1, 3);
-    
-        // Print final graph
-        g.printGraph();
+    vector<int> dfsOfGraph() {
+        int n = adj.size();
+        vector<int> res, vis(n, 0);
+        int start = 0;
+        dfs(start, vis, res);
+
+        return res;
+    }
+
+    vector<int> bfsOfGraph() {
+        int n = adj.size();
+        vector<int> bfs, vis(n ,0);
+        queue<int> q;
+        q.push(0);
+        vis[0] = 1;
+
+        while (!q.empty()) {
+            int node = q.front();
+            q.pop();
+            bfs.push_back(node);
+
+            for (auto it : adj[node]) {
+                if (!vis[it]) {
+                    vis[it] = 1;
+                    q.push(it);
+                }
+            }
+        }
+
+        return bfs;
     }
 };
+
+
+int main() {
+    Graph g(4); // Create graph with 4 vertices
+
+    // Add edges
+    g.addEdge(0, 1);
+    g.addEdge(0, 2);
+    g.addEdge(1, 3);
+
+    // Check edge
+    // cout << "Edge 1-3 exists? " << g.hasEdge(1, 3) << endl; // 1 (true)
+
+    // Update edge: change 0-2 to 0-3
+    // g.updateEdge(0, 2, 3);
+
+    // Remove edge
+    // g.removeEdge(1, 3);
+
+    // Print final graph
+    // g.printGraph();
+
+    vector<int> dfs = g.dfsOfGraph();
+    for(const auto& number : dfs) {
+        cout << number << " ";
+    }
+    cout << endl;
+
+    vector<int> bfs = g.bfsOfGraph();
+    for(const auto& number : bfs) {
+        cout << number << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
