@@ -233,3 +233,29 @@ end function
 - Divide and conquer approach.
 - Space Complexity: O(n) extra space is used for merging.
 - Time Complexity: Average: O(n log n), worst Case: O(n log n), best Case: O(n log n), merging takes linear time and there are log n levels of division.
+
+## Graph
+
+- Breath First search (BFS)
+    - Time Complexity: O(V+E), V = vertex, E = edges
+    - Space Complexity: O(V), V = adjacency list
+
+- Depth First search (DFS)
+    - Time Complexity: O(V+E), V = vertex, E = edges
+    - Space Complexity: O(V), V = adjacency list
+
+- Kahn's Topological Sort
+    - Time Complexity: O(V+E), V = vertex, E = edges
+    - Space Complexity: O(V), V = adjacency list
+
+- DFS Topological Sort
+    - Time Complexity: O(V+E), V = vertex, E = edges
+    - Space Complexity: O(V), V = adjacency list
+
+- Dijkstra's Algo
+    - Time Complexity: O((V+E) log V), V = vertex, E = edges
+    - Space Complexity: O(V + E), V = adjacency list, E = queue
+
+- Kruskal's Algo
+    - Time Complexity: O(E log E), E = edges
+    - Space Complexity: O(V + E), V = adjacency list, E = queue

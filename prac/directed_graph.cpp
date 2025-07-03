@@ -11,12 +11,12 @@ private:
 
     void dfs(int node, vector<int> &vis, vector<int> &result) {
         vis[node] = 1;
-        result.push_back(node);
         for(auto it : adj[node]) {
             if(!vis[it]) {
                 dfs(it, vis, result);
             }
         }
+        result.push_back(node);
     }
 
 public:
